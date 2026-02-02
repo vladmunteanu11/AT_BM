@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://vladmunteanu11.github.io/AIM",
+  "homepage": "https://vladmunteanu11.github.io/AT_BM",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
