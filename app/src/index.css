@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Elegant minimal palette - high contrast, clean */
+    --ink: 0 0% 8%;
+    --graphite: 0 0% 25%;
+    --silver: 0 0% 55%;
+    --cloud: 0 0% 96%;
+    --snow: 0 0% 100%;
+
+    /* Semantic mappings */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 8%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* Typography - refined and precise */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  /* Elegant button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-black text-white text-sm tracking-wide;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-black/85;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-transparent text-black text-sm tracking-wide;
+    @apply border border-black/20;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:bg-black hover:text-white hover:border-black;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center text-sm tracking-wide text-black/60;
+    @apply transition-colors duration-300;
+    @apply hover:text-black;
+  }
+
+  /* Elegant card */
+  .card-elegant {
+    @apply bg-white border border-black/5;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:border-black/10 hover:shadow-sm hover:-translate-y-0.5;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-24 lg:py-32;
+  }
+
+  .section-padding-lg {
+    @apply py-32 lg:py-40;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-6xl mx-auto px-6 lg:px-8;
+  }
+
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Label style */
+  .label-uppercase {
+    @apply text-xs tracking-[0.2em] uppercase text-black/40;
+  }
+
+  /* Animated underline */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-current;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+
+  /* Image hover zoom */
+  .img-zoom {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .group:hover .img-zoom {
+    @apply scale-[1.02];
+  }
+
+  /* Gradient overlays */
+  .overlay-gradient-b {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+  }
+
+  .overlay-gradient-t {
+    background: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.4) 100%);
+  }
+
+  /* Custom scrollbar - minimal */
+  .scrollbar-minimal::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-minimal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-minimal::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+  }
+
+  .scrollbar-minimal::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Selection styling - minimal */
+::selection {
+  background: rgba(0, 0, 0, 0.08);
+  color: inherit;
+}
+
+/* Focus styles - clean */
+*:focus-visible {
+  outline: 1px solid rgba(0, 0, 0, 0.4);
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  @apply opacity-100 transition-opacity duration-300;
+}
+
+img[data-loading="true"] {
+  @apply opacity-0;
+}
