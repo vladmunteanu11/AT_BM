@@ -1,6 +1,8 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const base = import.meta.env.BASE_URL;
+
 const mainServices = [
   {
     title: 'Zbor de inițiere',
@@ -8,7 +10,7 @@ const mainServices = [
     description: 'Experimentează senzația zborului la manșa unui avion ușor, însoțit de un instructor experimentat. O experiență de neuitat pentru pasionații de aviație.',
     duration: '20-30 minute',
     price: '350',
-    image: '/avion-zbor.jpg',
+    image: `${base}avion-zbor.jpg`,
     features: ['Briefing pre-zbor', 'Zbor cu instructor certificat', 'Certificat de participare'],
   },
   {
@@ -17,7 +19,7 @@ const mainServices = [
     description: 'Zbor liniștit și panoramic cu planorul, ideal pentru cei care vor să experimenteze zborul fără motor și să admire peisajele Maramureșului din aer.',
     duration: '15-20 minute',
     price: '250',
-    image: '/planor.jpg',
+    image: `${base}planor.jpg`,
     features: ['Tracțiune cu avion', 'Zbor panoramic', 'Fotografii din aer'],
   },
   {
@@ -26,7 +28,7 @@ const mainServices = [
     description: 'Salt cu parașuta de la 3000m însoțit de un instructor profesionist. Adrenalină pură și priveliști spectaculoase pentru iubitorii de senzații tari.',
     duration: '~1 oră (incluzând pregătirea)',
     price: '1.200',
-    image: '/parasutism.jpg',
+    image: `${base}parasutism.jpg`,
     features: ['Salt de la 3000m', 'Echipament complet', 'Instructor profesionist'],
   },
 ];

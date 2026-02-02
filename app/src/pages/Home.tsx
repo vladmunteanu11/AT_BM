@@ -2,21 +2,23 @@ import { useEffect, useRef } from 'react';
 import { ArrowRight, ArrowDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const base = import.meta.env.BASE_URL;
+
 const services = [
   {
-    image: '/avion-zbor.jpg',
+    image: `${base}avion-zbor.jpg`,
     title: 'Zbor de inițiere',
     description: 'Experimentează senzația zborului la manșa unui avion',
     price: 'de la 350 lei',
   },
   {
-    image: '/planor.jpg',
+    image: `${base}planor.jpg`,
     title: 'Zbor cu planorul',
     description: 'Zbor liniștit și panoramic fără motor',
     price: 'de la 250 lei',
   },
   {
-    image: '/parasutism.jpg',
+    image: `${base}parasutism.jpg`,
     title: 'Salt tandem',
     description: 'Salt cu parașuta însoțit de instructor',
     price: 'de la 1.200 lei',
@@ -50,7 +52,7 @@ export function Home() {
         <div className="absolute inset-0">
           <div className="hero-image absolute inset-0 will-change-transform">
             <img
-              src="/hero-aerodrom.jpg"
+              src={`${base}hero-aerodrom.jpg`}
               alt="Aerodromul Baia Mare"
               className="w-full h-full object-cover"
             />
@@ -183,7 +185,7 @@ export function Home() {
       {/* Image Section - Full bleed */}
       <section className="relative h-[70vh] overflow-hidden">
         <img
-          src="/hangar.jpg"
+          src={`${base}hangar.jpg`}
           alt="Hangar"
           className="w-full h-full object-cover"
         />

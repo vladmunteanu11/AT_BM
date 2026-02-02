@@ -1,11 +1,13 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const base = import.meta.env.BASE_URL;
+
 const aircraft = [
   {
     name: 'PZL-104 Wilga 35A',
     type: 'Avion utilitar',
-    image: '/avion-zbor.jpg',
+    image: `${base}avion-zbor.jpg`,
     description: 'Avion utilitar polonez, robust și versatil, ideal pentru zboruri de agrement, școală de zbor și remorcarea planoarelor.',
     specs: {
       echipaj: '1 pilot',
@@ -19,7 +21,7 @@ const aircraft = [
   {
     name: 'SZD-50 Puchacz',
     type: 'Planor bipost',
-    image: '/planor.jpg',
+    image: `${base}planor.jpg`,
     description: 'Planor polonez cu două locuri, excelent pentru școala de planorism și zboruri de agrement. Performanțe foarte bune și confort sporit.',
     specs: {
       echipaj: '1 pilot',
@@ -33,7 +35,7 @@ const aircraft = [
   {
     name: 'SZD-30 Pirat',
     type: 'Planor monopost',
-    image: '/planor.jpg',
+    image: `${base}planor.jpg`,
     description: 'Planor monoloc clasic, foarte popular pentru zborul solo și performanță. Ideal pentru piloții care doresc să progreseze.',
     specs: {
       echipaj: '1 pilot',
